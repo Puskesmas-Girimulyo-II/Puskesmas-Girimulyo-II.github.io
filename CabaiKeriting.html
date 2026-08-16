@@ -3,8 +3,7 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport"
-content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Cabai Keriting | Pemeriksaan Gizi Balita</title>
 
@@ -54,30 +53,14 @@ justify-content:center;
 background:
 radial-gradient(
 circle at center,
-#064e3b 0%,
-#022c22 38%,
-#020617 78%
+#065f46 0%,
+#022c22 40%,
+#020617 80%
 );
 
 transition:
 opacity .6s ease,
 visibility .6s ease;
-}
-
-#loader::after{
-content:"";
-
-position:absolute;
-inset:0;
-
-background:
-radial-gradient(
-circle,
-transparent 25%,
-rgba(0,0,0,.55) 100%
-);
-
-pointer-events:none;
 }
 
 .hide{
@@ -102,18 +85,14 @@ padding:30px 25px;
 border-radius:28px;
 
 background:
-rgba(2,44,34,.88);
+rgba(2,44,34,.92);
 
-backdrop-filter:
-blur(25px);
+backdrop-filter:blur(25px);
+-webkit-backdrop-filter:blur(25px);
 
--webkit-backdrop-filter:
-blur(25px);
+border:1px solid rgba(167,243,208,.3);
 
-border:
-1px solid rgba(167,243,208,.25);
-
-color:#f8fafc;
+color:#ffffff;
 
 text-align:center;
 
@@ -121,7 +100,7 @@ box-shadow:
 0 25px 70px rgba(0,0,0,.75);
 
 text-shadow:
-0 1px 3px rgba(0,0,0,.8);
+0 2px 5px rgba(0,0,0,.7);
 }
 
 
@@ -139,12 +118,9 @@ margin-bottom:10px;
 
 .label{
 font-size:11px;
-
-font-weight:700;
-
+font-weight:800;
 letter-spacing:2px;
-
-color:#a7f3d0;
+color:#d1fae5;
 }
 
 .status{
@@ -156,13 +132,12 @@ border-radius:50%;
 background:#34d399;
 
 box-shadow:
-0 0 12px #34d399;
+0 0 15px #34d399;
 
-animation:
-statusPulse 1.8s infinite;
+animation:pulse 1.8s infinite;
 }
 
-@keyframes statusPulse{
+@keyframes pulse{
 
 0%,100%{
 transform:scale(1);
@@ -171,34 +146,29 @@ opacity:1;
 
 50%{
 transform:scale(1.5);
-opacity:.55;
+opacity:.5;
 }
 
 }
 
 
 /* =========================
-   JUDUL
+   TITLE
 ========================= */
 
 .title{
 font-size:20px;
-
 font-weight:800;
-
-letter-spacing:.5px;
-
 color:#ffffff;
 
 margin-top:5px;
 
 text-shadow:
-0 2px 8px rgba(0,0,0,.8);
+0 2px 8px rgba(0,0,0,.9);
 }
 
 .subtitle{
 font-size:13px;
-
 font-weight:500;
 
 color:#d1fae5;
@@ -210,19 +180,17 @@ line-height:1.6;
 
 
 /* =========================
-   ANIMASI GIZI
+   ANIMASI PERTUMBUHAN
 ========================= */
 
 .growth{
 position:relative;
-
 height:155px;
-
 margin:20px 0 15px;
 }
 
 
-/* background circle */
+/* glow */
 
 .glow{
 position:absolute;
@@ -233,22 +201,20 @@ height:130px;
 left:50%;
 top:50%;
 
-transform:
-translate(-50%,-50%);
+transform:translate(-50%,-50%);
 
 border-radius:50%;
 
 background:
-rgba(16,185,129,.08);
+rgba(16,185,129,.10);
 
 box-shadow:
-0 0 70px rgba(16,185,129,.22);
+0 0 70px rgba(16,185,129,.3);
 
-animation:
-glowPulse 3s infinite;
+animation:glow 3s infinite;
 }
 
-@keyframes glowPulse{
+@keyframes glow{
 
 0%,100%{
 transform:
@@ -275,36 +241,34 @@ position:absolute;
 left:50%;
 top:43%;
 
-transform:
-translate(-50%,-50%);
+transform:translate(-50%,-50%);
 
-width:48px;
-height:48px;
+width:52px;
+height:52px;
 
 border-radius:50%;
 
 background:
 linear-gradient(
 145deg,
-#6ee7b7,
+#a7f3d0,
 #10b981
 );
 
 display:flex;
-
 align-items:center;
 justify-content:center;
 
-font-size:25px;
+font-size:27px;
 
 box-shadow:
-0 0 25px rgba(52,211,153,.65);
+0 0 28px rgba(52,211,153,.7);
 
 animation:
-childFloat 2.5s infinite ease-in-out;
+floatChild 2.5s infinite ease-in-out;
 }
 
-@keyframes childFloat{
+@keyframes floatChild{
 
 0%,100%{
 transform:
@@ -315,40 +279,37 @@ translateY(0);
 50%{
 transform:
 translate(-50%,-50%)
-translateY(-7px);
+translateY(-8px);
 }
 
 }
 
 
 /* =========================
-   GARIS PENGUKURAN
+   PENGUKURAN TINGGI
 ========================= */
 
 .measure{
 position:absolute;
 
-right:52px;
-top:15px;
+right:50px;
+top:12px;
 
 width:4px;
-height:120px;
+height:125px;
 
 border-radius:10px;
 
 background:
 linear-gradient(
 to bottom,
-#a7f3d0,
+#d1fae5,
 #10b981
 );
 
 box-shadow:
-0 0 10px rgba(52,211,153,.45);
+0 0 12px rgba(52,211,153,.5);
 }
-
-
-/* tanda pengukuran */
 
 .measure span{
 position:absolute;
@@ -358,9 +319,9 @@ left:-8px;
 width:20px;
 height:2px;
 
-background:#d1fae5;
+background:#ecfdf5;
 
-opacity:.8;
+opacity:.9;
 }
 
 .measure span:nth-child(1){
@@ -385,7 +346,7 @@ top:110px;
 
 
 /* =========================
-   BERAT / TIMBANGAN
+   TIMBANGAN
 ========================= */
 
 .scale{
@@ -394,10 +355,9 @@ position:absolute;
 left:50%;
 bottom:2px;
 
-transform:
-translateX(-50%);
+transform:translateX(-50%);
 
-width:105px;
+width:110px;
 height:12px;
 
 border-radius:20px;
@@ -405,10 +365,10 @@ border-radius:20px;
 background:#064e3b;
 
 border:
-1px solid rgba(167,243,208,.35);
+1px solid rgba(167,243,208,.4);
 
 box-shadow:
-0 5px 15px rgba(0,0,0,.4);
+0 5px 15px rgba(0,0,0,.5);
 }
 
 .scale::before{
@@ -419,10 +379,9 @@ position:absolute;
 left:50%;
 top:-20px;
 
-transform:
-translateX(-50%);
+transform:translateX(-50%);
 
-width:45px;
+width:46px;
 height:20px;
 
 border-radius:50% 50% 5px 5px;
@@ -430,7 +389,7 @@ border-radius:50% 50% 5px 5px;
 background:#10b981;
 
 box-shadow:
-0 0 12px rgba(16,185,129,.5);
+0 0 14px rgba(16,185,129,.6);
 }
 
 
@@ -441,14 +400,13 @@ box-shadow:
 .chart{
 position:absolute;
 
-left:20px;
+left:18px;
 bottom:15px;
 
 width:65px;
 height:70px;
 
 display:flex;
-
 align-items:flex-end;
 
 gap:5px;
@@ -467,9 +425,6 @@ to top,
 #10b981,
 #a7f3d0
 );
-
-box-shadow:
-0 0 7px rgba(52,211,153,.25);
 
 animation:
 chartGrow 2s infinite ease-in-out;
@@ -509,17 +464,19 @@ transform:scaleY(1);
 
 
 /* =========================
-   TEKS STATUS
+   TEKS
 ========================= */
 
 .loading-text{
 font-size:14px;
+font-weight:700;
 
-font-weight:600;
-
-color:#f0fdf4;
+color:#ffffff;
 
 margin-top:10px;
+
+text-shadow:
+0 2px 5px rgba(0,0,0,.9);
 }
 
 .description{
@@ -527,7 +484,7 @@ font-size:12px;
 
 line-height:1.6;
 
-color:#bbf7d0;
+color:#d1fae5;
 
 margin-top:6px;
 }
@@ -544,12 +501,12 @@ height:6px;
 
 border-radius:20px;
 
-background:#022c22;
+background:#011c16;
 
 overflow:hidden;
 
 border:
-1px solid rgba(167,243,208,.12);
+1px solid rgba(167,243,208,.15);
 }
 
 .bar{
@@ -563,7 +520,7 @@ background:
 linear-gradient(
 90deg,
 #10b981,
-#a7f3d0,
+#d1fae5,
 #10b981
 );
 
@@ -574,69 +531,13 @@ loading 1.5s infinite;
 @keyframes loading{
 
 0%{
-transform:
-translateX(-130%);
+transform:translateX(-130%);
 }
 
 100%{
-transform:
-translateX(330%);
+transform:translateX(330%);
 }
 
-}
-
-
-/* =========================
-   HOME BUTTON
-========================= */
-
-.home{
-position:fixed;
-
-right:18px;
-bottom:18px;
-
-width:55px;
-height:55px;
-
-border-radius:50%;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-background:
-rgba(2,44,34,.82);
-
-border:
-1px solid rgba(167,243,208,.3);
-
-backdrop-filter:
-blur(12px);
-
--webkit-backdrop-filter:
-blur(12px);
-
-z-index:99999;
-
-box-shadow:
-0 10px 30px rgba(0,0,0,.45);
-
-transition:.3s;
-}
-
-.home:hover{
-background:#10b981;
-
-transform:
-translateY(-4px)
-scale(1.05);
-}
-
-.home svg{
-width:26px;
-
-fill:#ecfdf5;
 }
 
 
@@ -668,7 +569,7 @@ height:145px;
 
 
 <!-- =========================
-     WEB APP
+     WEB APP CABAI KERITING
 ========================= -->
 
 <iframe
@@ -679,12 +580,13 @@ allow="geolocation">
 
 
 <!-- =========================
-     LOADER
+     LOADING SCREEN
 ========================= -->
 
 <div id="loader">
 
 <div class="card">
+
 
 <div class="header">
 
@@ -701,8 +603,9 @@ GIZI BALITA
 PEMERIKSAAN GIZI BALITA
 </div>
 
+
 <div class="subtitle">
-Cabai Keriting<br>
+CABAI KERITING<br>
 Puskesmas Panjatan I
 </div>
 
@@ -714,7 +617,7 @@ Puskesmas Panjatan I
 <div class="glow"></div>
 
 
-<!-- grafik -->
+<!-- GRAFIK -->
 
 <div class="chart">
 
@@ -726,7 +629,7 @@ Puskesmas Panjatan I
 </div>
 
 
-<!-- pengukuran -->
+<!-- PENGUKURAN -->
 
 <div class="measure">
 
@@ -739,14 +642,14 @@ Puskesmas Panjatan I
 </div>
 
 
-<!-- anak -->
+<!-- BALITA -->
 
 <div class="child">
 👶
 </div>
 
 
-<!-- timbangan -->
+<!-- TIMBANGAN -->
 
 <div class="scale"></div>
 
@@ -757,11 +660,14 @@ Puskesmas Panjatan I
 Menyiapkan pemeriksaan...
 </div>
 
+
 <div class="description">
 Pengukuran dan pemantauan pertumbuhan<br>
 serta status gizi balita
 </div>
 
+
+<!-- PROGRESS -->
 
 <div class="progress">
 
@@ -769,38 +675,10 @@ serta status gizi balita
 
 </div>
 
-</div>
 
 </div>
 
-
-<!-- =========================
-     HOME
-========================= -->
-
-<a
-href="https://puskesmaspanjatansatu.github.io/portal-digital/"
-class="home"
-aria-label="Kembali ke Portal Digital">
-
-<svg viewBox="0 0 24 24">
-
-<path d="
-M12 3.1
-2.6 11
-a1 1 0 0 0 .64 1.77
-H5v7
-a1 1 0 0 0 1 1
-h4v-6
-h4v6
-h4a1 1 0 0 0 1-1
-v-7h1.76
-A1 1 0 0 0 21.4 11
-L12 3.1z"/>
-
-</svg>
-
-</a>
+</div>
 
 
 <script>
@@ -812,9 +690,9 @@ const app =
 document.getElementById("app");
 
 
-/* Saat Web App selesai dimuat */
+/* WEB APP SELESAI DIMUAT */
 
-app.onload = function(){
+app.onload=function(){
 
 setTimeout(()=>{
 
@@ -825,7 +703,7 @@ loader.classList.add("hide");
 };
 
 
-/* Fallback */
+/* FALLBACK */
 
 setTimeout(()=>{
 
@@ -834,6 +712,7 @@ loader.classList.add("hide");
 },8000);
 
 </script>
+
 
 </body>
 </html>
